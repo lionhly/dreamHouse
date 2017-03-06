@@ -1,0 +1,93 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: black;
+}
+
+.content{
+	margin: 0 auto;
+	width: 960px;
+	height: 250px;
+	background: green;
+}
+//响应式布局
+@media screen and (min-width: 1000px){
+.content .box{
+	width:200px;
+	height: 200px;
+	background: red;
+	float: left;
+	margin: 0px 60px;
+}
+}
+	@media screen and (max-width: 600px) {
+.content .box{
+	width:200px;
+	height: 200px;
+}
+}
+.content .box_mission .icon{
+background: pink url(../image/mission.png) no-repeat ;
+display:block;
+width: 128px;
+height:128px;
+margin:0 auto;
+transition:all 0.2s ease;
+}
+.content .box_mission .icon:hover{
+	//width:30px;
+	transform:scale(1.2) rotate(360deg);
+}
+.content .button{
+	text-decoration: none;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	font-color:green;
+	font-weight: bolder;
+	width:128px;
+	height:50px;
+	background: url(../image/arrow.png) no-repeat 85px;
+	display:block;
+	margin:0 auto;
+	line-height: 50px;
+	border:2px solid rgba(255,255,255,0.8);
+	padding-left:5px; 
+	transition:all 0.2s ease;
+	position:relative;
+}
+.content .button:hover{
+	border:2px solid rgba(255,255,255,1);
+	background: url(../image/arrow.png) no-repeat 95px;
+}
+.line_top{
+	width:0px;
+	height: 2px;
+	background: white;
+	display: block;
+position:absolute;
+top:-2px;
+left:-100%;
+transition:all 0.2s ease;
+}
+.button:hover .line_top{
+	width:132px;
+	height: 2px;
+left:0px;
+}
+.line_bottom{
+	width:0px;
+	height: 2px;
+	background: white;
+	display: block;
+position:absolute;
+bottom:-2px;
+right:-100%;
+transition:all 0.2s ease;
+}
+.button:hover .line_bottom{
+	width:132px;
+	height: 2px;
+right:0px;
+}

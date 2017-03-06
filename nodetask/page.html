@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>page</title>
+	<meta charset="utf8">
+	<style type="text/css">
+     .content{
+     	width:500px;
+     	height: 500px;
+     	margin:0 auto;
+     	-webkit-perspective:800px;
+     	-webkit-perspective-origin:50% 50%;
+
+     }
+     .pageGroup{
+     	width:400px;
+     	height: 400px;
+     	margin:0 auto;
+     	transform-style:preserve-3d;
+        position:relative;
+     }
+     .page{
+width:360px;
+     	height: 360px;
+     	margin:20px;
+     	background: black;
+     	color: white;
+     	font-size:360px;
+     	line-height: 360px;
+     	text-align: center;
+     	font-weight: bolder;
+     	transform-origin:bottom;
+     	position:absolute;
+     	backface-visibility:hidden
+     }
+     #page1{
+      transition:all 0.2s;
+     }
+     #page2,#page3,#page4,#page5,#page6{
+     	background: pink;
+     	transform:rotateX(90deg);
+     	transition:all 0.2s;
+     }
+     .opt{
+     	margin:0px auto;
+     	text-align:center;
+     }
+	</style>
+	<script type="text/javascript">
+var curPage=1;
+function prev(){
+	
+	var page=document.getElementById("page"+curPage);
+	if(curPage==6)
+		return;
+	page.style.transform="rotateX(-90deg)";
+	curPage++;
+	var page=document.getElementById("page"+curPage);
+	page.style.transform="rotateX(0deg)";
+
+}
+</script>
+</head>
+<body>
+<div class="content">
+<div class="pageGroup">
+<div class="page" id="page1">1</div>
+<div class="page" id="page2">2</div>
+<div class="page" id="page3">3</div>
+<div class="page" id="page4">4</div>
+<div class="page" id="page5">5</div>
+<div class="page" id="page6">6</div>
+</div>
+<div class="opt">
+<a href="javascript:prev()">prev</a>
+<a href="javascript:next()">next</a>
+</div>
+</div>
+</div>
+
+</body>
+</html>
